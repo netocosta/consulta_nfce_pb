@@ -27,7 +27,7 @@ Evoluir o projeto para que as informações não fiquem apenas em um arquivo de 
 
 * [Site Pessoal](https://www.netocosta.com.br)
 * [LinkedIn](https://www.linkedin.com/in/netocostajp/)
-* [Youtube](https://www.youtube.com/c/NetoCostajp)
+* [Youtube](https://www.youtube.com/@dev.netocosta)
 * [Instagram](https://www.instagram.com/netocostajp/)
 * [Facebook](https://www.facebook.com/netocostajp/)
 
