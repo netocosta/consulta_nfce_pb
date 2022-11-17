@@ -8,7 +8,7 @@ Consulta NFC-e usando Python e Selenium webdriver. Após consulta é salvo o arq
 
 ## 🚀 Módulos usados
 
-* Selenium WebDriver
+* Selenium WebDriver ```python pip install selenium```
 * Base64
 * Time
 * Sys
