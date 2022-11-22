@@ -11,8 +11,8 @@ if __name__ == "__main__":
     chave = sys.argv[1:][0]
     salvar_em = '.\\'
 
-    
-    try {
+        
+    try:
         # Opções do Selenium
         options = Options()
         options.binary_location = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
