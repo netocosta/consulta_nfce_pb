@@ -5,12 +5,13 @@ import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.edge.options import Options
+from selenium.common.exceptions import NoSuchElementException
+
 
 if __name__ == "__main__":
     chave = sys.argv[1:][0]
     salvar_em = '.\\'
 
-        
     try:
         # Opções do Selenium
         options = Options()
@@ -20,7 +21,7 @@ if __name__ == "__main__":
         options.add_argument("--disable-infobars")
         options.add_argument("--disable-extensions")
         options.add_argument("--disable-gpu")
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         options.add_argument("--log-level=3")
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
         nav = webdriver.Edge(options=options)
@@ -28,7 +29,7 @@ if __name__ == "__main__":
         # Acessando o sistema da SEFAZ-PB
         nav.get('https://www4.sefaz.pb.gov.br/atf/seg/SEGf_AcessarFuncao.jsp?cdFuncao=FIS_1410&idSERVirtual=S&h=https://www.sefaz.pb.gov.br/ser/servirtual/credenciamento/info')
         nav.get('https://www4.sefaz.pb.gov.br/atf/fis/FISf_ConsultarNFCE.do?limparSessao=true&h=https://www.sefaz.pb.gov.br/ser/servirtual/credenciamento/info&idSERVirtual=S')
-        
+
         # Inserindo a chave de acesso no campo INPUT
         nav.find_element(By.TAG_NAME, "input").send_keys(chave)
         time.sleep(1)
@@ -47,6 +48,9 @@ if __name__ == "__main__":
         img_file.close()
         # Finalizando o webdrive do selenium
         nav.close()
-    except: 
+    except NoSuchElementException:
         nav.close()
-        print("Houve um erro, não é possível continuar")
+        print("NFC-e não encontrada! Verifique a chave")
+    except:
+        nav.close()
+        print("Houve um erro, não é possível continuar!")
