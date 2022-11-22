@@ -7,7 +7,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.edge.options import Options
 
 if __name__ == "__main__":
-    print("File one executed when ran directly")
     chave = sys.argv[1:][0]
     salvar_em = '.\\'
 
