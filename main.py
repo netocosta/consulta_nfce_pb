@@ -21,7 +21,7 @@ if __name__ == "__main__":
         options.add_argument("--disable-infobars")
         options.add_argument("--disable-extensions")
         options.add_argument("--disable-gpu")
-        # options.add_argument("--headless")
+        options.add_argument("--headless")  # rodar em background
         options.add_argument("--log-level=3")
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
         nav = webdriver.Edge(options=options)
